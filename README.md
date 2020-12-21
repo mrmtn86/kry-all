@@ -6,7 +6,7 @@ This is a web application that tracks web service's status (WORKING/FAILED).
 
 You can add, remove and modify services. Application supports multiple user accounts.
 
-# Project has 3 sub modules
+# Project has 3 sub-modules
 
 # 1 - kry-service-health:
 
@@ -35,8 +35,7 @@ This is the user interface module that has only web layer.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
-If you don't have it you can learn how to install it from
-here :  https://github.com/angular/angular-cli/tree/master/packages/angular/cli
+Angular CLI :  https://github.com/angular/angular-cli/tree/master/packages/angular/cli
 
 To Run It open a terminal window and navigate to project root directory <heartbeat-client>
 
@@ -81,6 +80,8 @@ Build & Run :
 Basic requirements (If these aren’t met the assignment will not pass):
 
 ● A user need to be able to add a new service with url, a name
+    +
+
 
 ● Added services have to be kept when the server is restarted
 
