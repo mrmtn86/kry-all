@@ -1,0 +1,44 @@
+<table class="table table-borderless table-striped">
+
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Url</th>
+    <th scope="col">Status</th>
+    <th scope="col">Status Since (UTC)</th>
+    <th scope="col">
+
+
+      <div class="btn-toolbar" style="justify-content: center; display: flex;" role="toolbar"
+           aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group">
+          <button [routerLink]="['/tracker-form']" class="btn btn-outline-light"><i class="fa fa-plus"> </i> Add
+          </button>
+        </div>
+        <div class="btn-group mr-2" role="group">
+          <button (click)="reload()" class="btn btn-outline-light"><i class="fa fa-refresh"></i> Reload</button>
+
+        </div>
+
+      </div>
+
+    </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let tracker of serviceTrackers">
+
+    <td>{{tracker.name}}</td>
+    <td>{{tracker.url}}</td>
+    <td style="color: {{getStatusColor(tracker.status)}}"> {{ tracker.status }}</td>
+    <td>{{ tracker.lastStatusUpdateTime }}</td>
+    <td class="text-center">
+      <button [routerLink]="['/tracker-form']" [queryParams]="{id:tracker.id}" class="btn btn-outline-dark"><i
+        class="fa fa-info"> </i></button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+

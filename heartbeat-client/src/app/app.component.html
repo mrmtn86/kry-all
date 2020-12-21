@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">Kry Service Heartbeat</h2>
+          <ul *ngIf="getUser()==null" class="text-center list-inline  ">
+            <li class="list-inline-item">
+              <label>
+                <input [(ngModel)]="email" placeholder="Enter email"/>
+              </label>
+            </li>
+            <li class="list-inline-item">
+              <button (click)="login()" class="btn btn-info">Login</button>
+            </li>
+
+          </ul>
+
+        </div>
+        <div *ngIf="getUser()!=null" class="card-footer text-center text-white py-3">
+          <div class="row">
+            <div class="col-sm-2"><h4 class="">{{getUser().name}}</h4></div>
+            <div class="col-sm-8"></div>
+
+            <div class="col-sm-2">
+              <button type="button" (click)="loguot()"
+                      class="btn btn-outline-light"><i class="fa fa-undo"></i> Logout
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,78 @@
+<div class="card">
+  <div class="card-header alert alert-{{alertStatus}}">
+    <div class="row">
+      <div class="col-sm-4">
+        <a type="submit" class="btn btn-outline-dark"
+           [routerLink]="['/service-trackers']">
+          <i class="fa fa-arrow-left "></i> Go Back
+        </a>
+      </div>
+      <div class="col-sm-4 text-center">
+        <h3>{{titleName}} </h3>
+      </div>
+      <div [hidden]="serviceTracker.status == null" class="col-sm-4 text-center ">
+        <h6>{{serviceTracker.status}} </h6> Since : {{serviceTracker.lastStatusUpdateTime}}
+
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+
+    <form (ngSubmit)="onSubmit()" #trackerForm="ngForm">
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="serviceTracker.name"
+                 class="form-control"
+                 id="name"
+                 name="name"
+                 placeholder="Enter service name"
+                 required #name="ngModel">
+          <div [hidden]="name.valid  || !name.touched" class="alert alert-danger">Name is required</div>
+        </div>
+
+        <div class="form-group col-md-8">
+          <label for="url">Url</label>
+          <input type="url" [(ngModel)]="serviceTracker.url"
+                 class="form-control"
+                 id="url"
+                 name="url"
+                 placeholder="Enter url address"
+                 required #url="ngModel">
+          <div [hidden]="url.valid || !url.touched" class="alert alert-danger">Url is required</div>
+        </div>
+      </div>
+
+      <br/>
+
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2">
+
+          <button type="submit" [disabled]="!trackerForm.form.valid"
+                  class="btn btn-outline-success"><i class="fa fa-save"></i> Save
+          </button>
+        </div>
+        <div class="col-sm-2">
+          <button type="button" [disabled]="trackerForm.touched || serviceTracker.id == null" (click)="delete()"
+                  class="btn btn-outline-danger"><i class="fa fa-remove"></i> Delete
+          </button>
+        </div>
+        <div class="col-sm-2">
+          <a (click)="reload()" class="btn btn-outline-dark"><i class="fa fa-refresh"></i> Reload </a>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+
+    </form>
+  </div>
+  <div class="card-footer" [hidden]="serviceTracker.status == null">
+
+    <div> Created Time : {{serviceTracker.creatTime}}</div>
+
+    <div>Updated Time : {{serviceTracker.lastUpdateTime}}</div>
+
+  </div>
+</div>
+*UTC timezone
