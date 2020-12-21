@@ -80,34 +80,48 @@ Build & Run :
 Basic requirements (If these aren’t met the assignment will not pass):
 
 ● A user need to be able to add a new service with url, a name
-    +
-
 
 ● Added services have to be kept when the server is restarted
 
 ● Present whenever a service was added and when the last change was made
 
-+
-+
-+
+###+ All of them assigned
+
+##
+##
+
 
 Extra requirements (No prioritisation on these, pick the ones that you find
 interesting):
 
 ● We want full create/update/delete functionality for services
+        
+      Service tracker form page 
 
 ● The results from the poller are not automatically shown to the user
 (you have to reload the page to see results)
 
+     Reload button  
+
 ● We want to have informative and nice looking animations on
 add/remove services
 
+    Not the best animations, but I think enough informative :)
+
 ● Simultaneous writes sometimes causes strange behavior
+
+     Aerver side and client side error handlers 
 
 ● Protect the poller from misbehaving services (for example answering
 really slowly)
 
+    Check every service asynchronously
+
 ● URL Validation ("sdgf" is probably not a valid service)
+    
+    Validating for every layer, from web to db
 
 ● Multi user support. Users should not see the services added by
 another user
+    
+    Multi user sapport (Nelly,Ludvig,Kerry). Can be added more from DB 
