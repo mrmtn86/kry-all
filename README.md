@@ -110,7 +110,7 @@ add/remove services
 
 ● Simultaneous writes sometimes causes strange behavior
 
-     Aerver side and client side error handlers 
+     Server side and client side error handlers 
 
 ● Protect the poller from misbehaving services (for example answering
 really slowly)
